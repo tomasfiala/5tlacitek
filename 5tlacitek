@@ -1,0 +1,50 @@
+<html>
+<head>
+<style>
+	.buttonStyle1:hover {
+		color: red;
+	}
+	.buttonStyle2:hover {
+		color: blue;
+	}
+	.buttonStyle3:hover {
+		color: green;
+	}
+	.buttonStyle4:hover {
+		color: yellow;
+	}
+	.buttonStyle5:hover {
+		color: orange;
+	}
+</style>
+</head>
+<body>
+  <button id="qw" onclick="myFunction1()" class="buttonStyle1"> Tlačítko 1 </button>
+  <button id="er" onclick="myFunction2()" class="buttonStyle2"> Tlačítko 2 </button>
+  <button id="tz" onclick="myFunction3()" class="buttonStyle3"> Tlačítko 3 </button>
+  <button id="ui" onclick="myFunction4()" class="buttonStyle4"> Tlačítko 4 </button>
+  <button id="op" onclick="myFunction5()" class="buttonStyle5"> Tlačítko 5 </button>
+<script>
+function myFunction1() {
+	document.getElementById("qw");
+	document.body.appendChild(qw);
+}
+function myFunction2() {
+	document.getElementById("er");
+	document.body.appendChild(er);
+}
+function myFunction3() {
+	document.getElementById("tz");
+	document.body.appendChild(tz);
+}
+function myFunction4() {
+	document.getElementById("ui");
+	document.body.appendChild(ui);
+}
+function myFunction5() {
+	document.getElementById("op");
+	document.body.appendChild(op);
+}
+</script>
+</body>
+</html>
