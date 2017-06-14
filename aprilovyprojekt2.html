@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <style>
+      .buttonStyle {
+        width:40px;
+        height:30px;
+        border:1px;
+      }
+      .buttonStyle:hover {
+        color:gray;
+      }
+      .buttonStyle2 {
+        background-color:red;
+        color:white;
+        border:1px;
+        width:40px;
+        height:30px;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="tabxd">
+      <tr>
+        <td><button id="qwe" onclick="myFunction(this)" class="buttonStyle"><b>T1</b></button></td>
+        <td><button id="wer" onclick="myFunction(this)" class="buttonStyle"><b>T2</b></button></td>
+        <td><button id="ert" onclick="myFunction(this)" class="buttonStyle"><b>T3</b></button></td>
+        <td><button id="rtz" onclick="myFunction(this)" class="buttonStyle"><b>T4</b></button></td>
+      </tr>
+      <tr>
+        <td><button id="red" onclick="myFunction(this)" class="buttonStyle2"><b>T5</b></button></td>
+        <td><button id="zui" onclick="myFunction(this)" class="buttonStyle"><b>T6</b></button></td>
+        <td><button id="uio" onclick="myFunction(this)" class="buttonStyle"><b>T7</b></button></td>
+        <td><button id="iop" onclick="myFunction(this)" class="buttonStyle"><b>T8</b></button></td>
+      </tr>
+      <tr>
+        <td><button id="opa" onclick="myFunction(this)" class="buttonStyle"><b>T9</b></button></td>
+        <td><button id="pas" onclick="myFunction(this)" class="buttonStyle"><b>T10</b></button></td>
+        <td><button id="asd" onclick="myFunction(this)" class="buttonStyle"><b>T11</b></button></td>
+        <td><button id="sdf" onclick="myFunction(this)" class="buttonStyle"><b>T12</b></button></td>
+      </tr>
+      <tr>
+        <td><button id="dfg" onclick="myFunction(this)" class="buttonStyle"><b>T13</b></button></td>
+        <td><button id="fgh" onclick="myFunction(this)" class="buttonStyle"><b>T14</b></button></td>
+        <td><button id="ghj" onclick="myFunction(this)" class="buttonStyle"><b>T15</b></button></td>
+        <td><button id="hjk" onclick="myFunction(this)" class="buttonStyle"><b>T16</b></button></td>
+      </tr>
+      </table>
+    <script>
+      function myFunction(clicked) {
+        console.log (clicked.id);
+        var i,j;
+        var cil = clicked.parentElement;
+        var zdroj = document.getElementById("red").parentElement;
+        outerloop:
+        for (i = 0; i<4; i++) {
+          for (j = 0; j<4; j++) {
+            if (cil == tabxd.rows[i].cells[j]) { //určí souřadnice kliknutého tlačítka
+              ci = i;
+              cj = j;
+            }
+            else if (zdroj == tabxd.rows[i].cells[j]) { //určí souřadnice červeného tlačítka
+              zi = i;
+              zj = j;
+            }
+          }
+        }
+        console.log (ci,cj,zi,zj); //vypisuje souřadnice v tabulce
+        var druheTlacitko = cil.children[0];
+        if(Math.abs(ci-zi) + Math.abs(cj-zj) == 1) { //Math.abs - funkce na počítání: abs = absolutní hodnota
+        cil.appendChild(document.getElementById("red")); //to samotné přehazování tlačítek, ale proběhne pouze pokud výsledek Math funkce je 1
+        zdroj.appendChild(druheTlacitko);
+        }
+      }
+    </script>
